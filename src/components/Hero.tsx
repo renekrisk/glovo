@@ -94,31 +94,7 @@ export default function Hero() {
 
                 </div>
 
-                {/* Stats Grid - with improved staggering */}
-                <div className="grid grid-cols-2 md:grid-cols-4 pt-12 gap-8">
-                    {[
-                        { value: "30min", label: "Average Delivery" },
-                        { value: "100+", label: "Partner Businesses" },
-                        { value: "24/7", label: "Service Available" },
-                        { value: "95%", label: "Customer Satisfaction" }
-                    ].map((stat, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                                type: "spring",
-                                bounce: 0.4,
-                                duration: 0.8,
-                                delay: 1.2 + (index * 0.1)
-                            }}
-                        >
-                            <span className="block text-3xl font-bold text-white">{stat.value}</span>
-                            <span className="text-sm text-white/80 mt-1">{stat.label}</span>
-                        </motion.div>
-                    ))}
-                </div>
+
             </div>
         </section>
     );
