@@ -65,26 +65,28 @@ export default function Hero() {
                         Bringing Nairobi’s legendary kitchens <br className="hidden md:block" /> and hidden gems straight to your table.
                     </motion.p>
 
-                    {/* Address Trigger - Refined */}
+                    {/* Address Input - Refined */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.5, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="flex flex-col items-center justify-center gap-6 mt-16 max-w-2xl mx-auto"
+                        className="flex flex-col items-center justify-center gap-4 mt-16 max-w-xl mx-auto w-full px-6"
                     >
-                        <button className="group relative w-full md:w-auto bg-white/95 backdrop-blur-sm text-black px-10 py-5 rounded-2xl text-sm font-medium tracking-wide transition-all duration-500 hover:bg-[#4A90E2] hover:text-white hover:scale-[1.02] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_30px_80px_-15px_rgba(74,144,226,0.5)] border border-white/20">
-                            <div className="flex items-center gap-4 justify-center">
-                                <div className="relative">
-                                    <Search size={18} className="text-gray-400 group-hover:text-white transition-colors" />
-                                    <div className="absolute -inset-2 bg-[#4A90E2]/0 group-hover:bg-[#4A90E2]/10 rounded-full transition-all duration-300 -z-10" />
-                                </div>
-                                <span className="text-sm font-medium">Enter your address</span>
-                                <div className="w-8 h-8 rounded-full bg-gray-900/5 group-hover:bg-white/20 flex items-center justify-center ml-2 transition-all duration-300">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#4A90E2] group-hover:bg-white transition-colors" />
-                                </div>
+                        <div className="w-full bg-white/95 backdrop-blur-sm rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-white/20 p-6">
+                            <label className="block text-xs text-gray-600 mb-4 font-medium">What's your address?</label>
+                            <div className="relative">
+                                <Search size={18} className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-400" />
+                                <input
+                                    type="text"
+                                    placeholder="Enter delivery address..."
+                                    className="w-full pl-8 pr-4 py-3 bg-transparent text-gray-900 placeholder:text-gray-400 border-b border-gray-200 focus:border-[#4A90E2] outline-none transition-colors text-sm"
+                                />
                             </div>
+                        </div>
+                        <button className="text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 group">
+                            <div className="w-1 h-1 rounded-full bg-white/40 group-hover:bg-white transition-colors" />
+                            Use current location
                         </button>
-                        <p className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-bold">Fast • Fresh • 254</p>
                     </motion.div>
                 </div>
             </div>
