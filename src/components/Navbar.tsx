@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 
+import { Link } from 'react-router-dom';
+
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -24,11 +26,11 @@ export default function Navbar() {
         `}>
 
                     {/* Logo */}
-                    <a href="/" className="flex items-center gap-2 group">
+                    <Link to="/" className="flex items-center gap-2 group">
                         <span className="font-heading font-bold text-lg tracking-tight text-gray-900 group-hover:opacity-70 transition-opacity">
                             Munchezz
                         </span>
-                    </a>
+                    </Link>
 
                     {/* Desktop Links - Centered */}
                     <div className="hidden md:flex items-center gap-1">
@@ -39,13 +41,19 @@ export default function Navbar() {
                     </div>
 
                     {/* CTA Button */}
-                    <div className="flex items-center gap-2">
-                        <a
-                            href="#"
-                            className="hidden md:flex items-center gap-2 bg-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300"
+                    <div className="flex items-center gap-3">
+                        <Link
+                            to="/login"
+                            className="hidden md:flex text-sm font-bold text-gray-600 hover:text-black transition-colors px-4"
                         >
                             Log in
-                        </a>
+                        </Link>
+                        <Link
+                            to="/signup"
+                            className="hidden md:flex items-center gap-2 bg-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300"
+                        >
+                            Sign up
+                        </Link>
 
                         {/* Mobile Toggle */}
                         <button

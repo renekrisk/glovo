@@ -3,27 +3,27 @@ import { Clock, Users, TrendingUp, ThumbsUp } from 'lucide-react';
 
 const stats = [
     {
-        value: "30",
+        value: "25",
         unit: "min",
-        label: "Premium Delivery",
+        label: "Avg. Connection",
         icon: Clock
     },
     {
-        value: "100",
+        value: "500",
         unit: "+",
-        label: "Elite Partners",
+        label: "Diverse Partners",
         icon: Users
     },
     {
         value: "24",
         unit: "/7",
-        label: "Always On",
+        label: "Reliable Support",
         icon: TrendingUp
     },
     {
-        value: "95",
+        value: "99",
         unit: "%",
-        label: "Trust Score",
+        label: "Partner Success",
         icon: ThumbsUp
     }
 ];

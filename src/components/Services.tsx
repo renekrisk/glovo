@@ -4,37 +4,46 @@ import { useRef } from 'react';
 const offerings = [
     {
         id: "01",
-        category: "Fine Dining",
-        title: "The Culinary Arts",
-        description: "Premier kitchens delivered with absolute precision and care.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop",
+        category: "Gastronomy",
+        title: "Premier Restaurants",
+        description: "From Michelin-starred kitchens to the finest local comfort favorites.",
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000",
         aspect: "aspect-[3/4]"
     },
     {
         id: "02",
-        category: "Essentials",
-        title: "Global Provisions",
-        description: "Farm-to-table freshness sourced from local artisans and global markets.",
-        image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+        category: "Provisions",
+        title: "Supermarkets",
+        description: "Fresh produce and daily essentials from curated neighborhood markets.",
+        image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000",
         aspect: "aspect-[4/5]",
         offset: "lg:mt-32"
     },
     {
         id: "03",
         category: "Wellness",
-        title: "Health & Rituals",
-        description: "Discretion and speed for your personal well-being and daily rituals.",
-        image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop",
+        title: "Pharmacies",
+        description: "Discreet and rapid delivery for your health and personal care needs.",
+        image: "https://images.unsplash.com/photo-1576091160550-2173bdd99602?q=80&w=1000",
         aspect: "aspect-[3/4]"
     },
     {
         id: "04",
-        category: "Curated",
-        title: "Specialty Boutiques",
-        description: "Unique finds from the most exclusive local boutiques.",
-        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop",
+        category: "Rituals",
+        title: "Bakeries",
+        description: "Warm, artisanal breads and delicate pastries baked with artisanal heart.",
+        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000",
         aspect: "aspect-[4/5]",
         offset: "lg:-mt-24"
+    },
+    {
+        id: "05",
+        category: "Essential",
+        title: "Water Delivery",
+        description: "Pure, chilled, and dependable. The foundation of your daily life, curated.",
+        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1000",
+        aspect: "aspect-[3/4]",
+        offset: "lg:-mt-32"
     }
 ];
 
@@ -67,8 +76,8 @@ export default function Services() {
                             >
                                 <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-white/40 mb-6 block">Offerings</span>
                                 <h2 className="text-5xl md:text-7xl font-heading font-light text-white leading-[1.1] tracking-tighter">
-                                    Curated with <br />
-                                    <span className="text-white/30 italic">Intention</span>.
+                                    Bridging the <br />
+                                    <span className="text-white/30 italic">Gap</span>.
                                 </h2>
                             </motion.div>
 
@@ -81,7 +90,7 @@ export default function Services() {
                             >
                                 <div className="h-px w-20 bg-white/20" />
                                 <p className="text-xl text-white/60 font-light leading-relaxed italic">
-                                    "Bridging the Gap between Vision and Reality through meticulous selection."
+                                    "Empowering any business to participate in the luxury of rapid, intentional commerce."
                                 </p>
                                 <p className="text-sm text-white/40 font-light leading-relaxed">
                                     Our ecosystem is designed for those who value time and quality above all else. Every partner is hand-selected to ensure your experience remains unparalleled.

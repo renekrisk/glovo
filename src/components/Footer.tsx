@@ -36,7 +36,7 @@ export default function Footer() {
                             </span>
                         </a>
                         <p className="text-xs text-gray-500 leading-relaxed mb-6 max-w-[200px]">
-                            Premium delivery from restaurants, supermarkets, and pharmacies. Everything you need, delivered fast.
+                            Munchezz is bridging the gap between national giants and local artisans. Empowering any business to sign up and deliver.
                         </p>
                         <div className="flex gap-3">
                             {[Instagram, Facebook, Twitter, Linkedin].map((Icon, i) => (

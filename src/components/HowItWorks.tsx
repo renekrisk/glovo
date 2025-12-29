@@ -9,21 +9,21 @@ export default function HowItWorks() {
     const steps = [
         {
             icon: Search,
-            title: "Discovery",
-            description: "Browse curated restaurants and fine boutiques. Find exactly what you crave with intentional search.",
-            id: "Phase 01"
+            title: "Equitable Discovery",
+            description: "From global supermarkets to local artisanal bakeries. We curate a selection that empowers every business to shine.",
+            id: "Step 01"
         },
         {
             icon: ShoppingCart,
-            title: "Precision",
-            description: "Select with confidence. Our seamless checkout ensures your intentions are met with absolute accuracy.",
-            id: "Phase 02"
+            title: "Seamless Integration",
+            description: "Our platform bridges the technological gap, allowing even the smallest boutiques to handle high-demand delivery with ease.",
+            id: "Step 02"
         },
         {
             icon: Package,
-            title: "Deliverance",
-            description: "The wait is over. Experience the ritual of receiving premium quality, handled with care.",
-            id: "Phase 03"
+            title: "Reliable Connection",
+            description: "A professional delivery fleet that treats every package—from water jugs to fine dining—with premium care.",
+            id: "Step 03"
         }
     ];
 
@@ -52,8 +52,8 @@ export default function HowItWorks() {
                             The Narrative
                         </span>
                         <h2 className="text-5xl md:text-7xl font-heading font-light text-gray-900 leading-[1.1] tracking-tighter mb-8">
-                            A journey shaped <br />
-                            by <span className="text-gray-900/40 italic">intention</span> and <span className="text-gray-900/40">care</span>.
+                            Bridging the gap <br />
+                            between <span className="text-gray-900/40 italic">vision</span> and <span className="text-gray-900/40">delivery</span>.
                         </h2>
                     </motion.div>
                 </div>

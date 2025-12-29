@@ -12,7 +12,7 @@ export default function Hero() {
     const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0.1, 0]);
 
-    const title = "Freshness. Delivered.";
+    const title = "Munchezz Selection.";
     const words = title.split(" ");
 
     return (
@@ -26,9 +26,9 @@ export default function Hero() {
                 transition={{ duration: 30, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
                 className="absolute inset-0 pointer-events-none"
             >
-                <div className="absolute inset-0 opacity-[0.08] mix-blend-overlay grayscale">
+                <div className="absolute inset-0 opacity-[0.15] mix-blend-overlay grayscale">
                     <img
-                        src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop"
+                        src="file:///C:/Users/User/.gemini/antigravity/brain/a9883f27-a6a0-4f9b-b6c2-e99ee887978b/munchezz_hero_cinematic_1767003484933.png"
                         alt=""
                         className="w-full h-full object-cover"
                     />
@@ -40,7 +40,7 @@ export default function Hero() {
 
                     {/* Main Heading - The Statement */}
                     <div className="overflow-hidden mb-12">
-                        <motion.h1 className="text-[14vw] md:text-[12vw] font-heading font-light tracking-[-0.05em] text-white leading-[0.8] mb-0 flex flex-wrap justify-center gap-[0.2em]">
+                        <motion.h1 className="text-[12vw] md:text-[10vw] font-heading font-light tracking-[-0.05em] text-white leading-[0.8] mb-0 flex flex-wrap justify-center gap-[0.2em]">
                             {words.map((word, i) => (
                                 <motion.span
                                     key={i}
@@ -55,14 +55,14 @@ export default function Hero() {
                         </motion.h1>
                     </div>
 
-                    {/* Subheading - Refined to single line or minimal block */}
+                    {/* Subheading */}
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1.5, delay: 1.2, ease: "easeOut" }}
-                        className="text-lg md:text-xl text-white/50 font-light tracking-[0.2em] uppercase mb-20"
+                        className="text-lg md:text-xl text-white font-light tracking-[0.1em] mb-20 max-w-2xl mx-auto lowercase"
                     >
-                        The Art of Curation.
+                        bridging the gap between premier kitchens, local boutiques, and your doorstep.
                     </motion.p>
 
                     {/* Minimalist Address Trigger */}

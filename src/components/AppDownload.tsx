@@ -26,13 +26,13 @@ export default function AppDownload() {
                         viewport={{ once: true }}
                         className="space-y-8"
                     >
-                        <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/60 block">Experience Glovo</span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/60 block">Experience Munchezz</span>
                         <h2 className="text-5xl md:text-6xl font-heading font-light text-white leading-[1.1] tracking-tight">
                             The world at your <br />
                             <span className="text-white/30 italic text-6xl">fingertips.</span>
                         </h2>
                         <p className="text-xl text-white/70 font-light leading-relaxed max-w-md">
-                            Download our premium application and experience the seamless integration of choice and delivery.
+                            Download the Munchezz application to bridge the gap between choice and delivery.
                         </p>
                     </motion.div>
 
