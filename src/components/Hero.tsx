@@ -70,15 +70,21 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.5, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="flex flex-col md:flex-row items-center justify-center gap-6 mt-16 max-w-lg mx-auto"
+                        className="flex flex-col items-center justify-center gap-6 mt-16 max-w-2xl mx-auto"
                     >
-                        <button className="w-full bg-white text-black px-12 py-6 rounded-full text-[10px] font-bold tracking-[0.2em] transition-all hover:bg-[#4A90E2] hover:text-white uppercase flex items-center justify-between group">
-                            <span className="flex items-center gap-4">
-                                <Search size={16} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                                Enter your address
-                            </span>
-                            <div className="h-2 w-2 rounded-full bg-[#4A90E2] group-hover:bg-white transition-colors" />
+                        <button className="group relative w-full md:w-auto bg-white/95 backdrop-blur-sm text-black px-10 py-5 rounded-2xl text-sm font-medium tracking-wide transition-all duration-500 hover:bg-[#4A90E2] hover:text-white hover:scale-[1.02] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_30px_80px_-15px_rgba(74,144,226,0.5)] border border-white/20">
+                            <div className="flex items-center gap-4 justify-center">
+                                <div className="relative">
+                                    <Search size={18} className="text-gray-400 group-hover:text-white transition-colors" />
+                                    <div className="absolute -inset-2 bg-[#4A90E2]/0 group-hover:bg-[#4A90E2]/10 rounded-full transition-all duration-300 -z-10" />
+                                </div>
+                                <span className="text-sm font-medium">Enter your address</span>
+                                <div className="w-8 h-8 rounded-full bg-gray-900/5 group-hover:bg-white/20 flex items-center justify-center ml-2 transition-all duration-300">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#4A90E2] group-hover:bg-white transition-colors" />
+                                </div>
+                            </div>
                         </button>
+                        <p className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-bold">Fast • Fresh • 254</p>
                     </motion.div>
                 </div>
             </div>
