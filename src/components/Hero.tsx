@@ -65,26 +65,23 @@ export default function Hero() {
                         Bringing Nairobi’s legendary kitchens <br className="hidden md:block" /> and hidden gems straight to your table.
                     </motion.p>
 
-                    {/* Address Input - Refined */}
+                    {/* Address Input - Minimal */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.5, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="flex flex-col items-center justify-center gap-4 mt-16 max-w-xl mx-auto w-full px-6"
+                        className="flex flex-col items-center justify-center gap-3 mt-16 max-w-md mx-auto w-full px-6"
                     >
-                        <div className="w-full bg-white/95 backdrop-blur-sm rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-white/20 p-6">
-                            <label className="block text-xs text-gray-600 mb-4 font-medium">What's your address?</label>
-                            <div className="relative">
-                                <Search size={18} className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-400" />
-                                <input
-                                    type="text"
-                                    placeholder="Enter delivery address..."
-                                    className="w-full pl-8 pr-4 py-3 bg-transparent text-gray-900 placeholder:text-gray-400 border-b border-gray-200 focus:border-[#4A90E2] outline-none transition-colors text-sm"
-                                />
-                            </div>
+                        <p className="text-xs text-white/60 font-medium">What's your address?</p>
+                        <div className="relative w-full">
+                            <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                            <input
+                                type="text"
+                                placeholder="Enter delivery address"
+                                className="w-full pl-12 pr-4 py-4 bg-white/95 backdrop-blur-sm text-gray-900 placeholder:text-gray-400 rounded-full outline-none focus:ring-2 focus:ring-white/40 transition-all text-sm shadow-lg"
+                            />
                         </div>
-                        <button className="text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2 group">
-                            <div className="w-1 h-1 rounded-full bg-white/40 group-hover:bg-white transition-colors" />
+                        <button className="text-xs text-white/50 hover:text-white transition-colors">
                             Use current location
                         </button>
                     </motion.div>
