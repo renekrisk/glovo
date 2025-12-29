@@ -113,6 +113,7 @@ export default function Navbar() {
                             {[
                                 { name: 'THE SELECTION', href: '/#categories' },
                                 { name: 'OUR STORY', href: '/legal/about-us' },
+                                { name: 'OUR TEAM', href: '/legal/our-team' },
                                 { name: 'KULA FITI', href: '/#app-download' },
                             ].map((item, i) => (
                                 <motion.a
@@ -121,7 +122,7 @@ export default function Navbar() {
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ delay: 0.1 + (i * 0.08) }}
                                     href={item.href}
-                                    className="text-5xl font-heading font-extralight tracking-tight text-white hover:text-[#4A90E2] transition-colors"
+                                    className="text-4xl font-heading font-extralight tracking-tight text-white hover:text-[#4A90E2] transition-colors"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     {item.name}
