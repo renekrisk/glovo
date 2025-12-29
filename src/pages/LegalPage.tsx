@@ -41,22 +41,22 @@ const pages: Record<string, {
         content: "Meet the founders behind the movement. Driven by a shared love for Nairobi and a commitment to excellence.",
         team: [
             {
-                name: "Dean",
+                name: "Dean Ndere",
                 role: "Founder, CEO",
                 bio: "Leading the vision and strategy behind Munchezz. Focused on building a platform that truly serves the 254."
             },
             {
-                name: "Kris",
+                name: "Kris Kamau",
                 role: "CTO, Co-founder",
                 bio: "The engineering heartbeat. Building the high-performance architecture that keeps the city's favorite flavors moving."
             },
             {
-                name: "Bradley",
+                name: "Bradley Kahuria",
                 role: "Sales & Marketing, Co-founder",
                 bio: "The voice of the brand. Connecting local legends to our growing community and expanding the Munchezz footprint."
             },
             {
-                name: "Evans",
+                name: "Evans Ngure",
                 role: "Law, Policy & Research, Co-founder",
                 bio: "Safeguarding the movement. Ensuring transparency, fairness, and excellence in every policy and partnership."
             }
