@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, MapPin, LucideIcon } from 'lucide-react';
 import { useEffect } from 'react';
 
 const pages: Record<string, {
@@ -9,7 +9,7 @@ const pages: Record<string, {
     content: string;
     sections?: { title: string; body: string | string[] }[];
     team?: { name: string; role: string; bio: string }[];
-    contact?: { type: string; value: string; icon: any }[];
+    contact?: { type: string; value: string; icon: LucideIcon }[];
 }> = {
     'about-us': {
         title: 'Our Identity',
