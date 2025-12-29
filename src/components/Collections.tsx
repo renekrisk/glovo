@@ -53,7 +53,6 @@ export default function Collections() {
     });
 
     const titleY = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
-    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
     return (
         <section ref={sectionRef} className="relative py-24 lg:py-40 bg-[#D4AF37] overflow-hidden" id="categories">
