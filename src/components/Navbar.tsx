@@ -1,94 +1,153 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-
-
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
+
+    // Hide navbar on auth-related pages
+    const authPaths = [
+        '/login',
+        '/signup',
+        '/partner/login',
+        '/partner/signup',
+        '/courier/login',
+        '/courier/signup'
+    ];
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
+        const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    if (authPaths.includes(location.pathname)) {
+        return null;
+    }
+
     return (
         <>
-            <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-                {/* Floating Island Container */}
-                <nav className={`
-            flex items-center justify-between pl-6 pr-2 py-2.5 rounded-full transition-all duration-300
-            ${scrolled
-                        ? 'bg-white/80 backdrop-blur-xl border border-white/20 shadow-xl w-full max-w-5xl'
-                        : 'bg-white/90 backdrop-blur-lg border border-gray-100 shadow-lg w-full max-w-4xl'}
-        `}>
-
-                    {/* Logo */}
+            <motion.nav
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className={`
+                    fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-[0.16, 1, 0.3, 1]
+                    ${scrolled
+                        ? 'py-4 bg-white/[0.08] backdrop-blur-3xl border-b border-white/5 shadow-2xl'
+                        : 'py-8 bg-transparent'}
+                `}
+            >
+                <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
+                    {/* Brand */}
                     <Link to="/" className="flex items-center gap-2 group">
-                        <span className="font-heading font-bold text-lg tracking-tight text-gray-900 group-hover:opacity-70 transition-opacity">
-                            Munchezz
+                        <span className="font-heading font-bold text-2xl tracking-tighter text-white">
+                            Munchezz<span className="text-[#4A90E2]">.</span>
                         </span>
                     </Link>
 
-                    {/* Desktop Links - Centered */}
-                    <div className="hidden md:flex items-center gap-1">
-                        <a href="/#categories" className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-100/50 rounded-full transition-all">Categories</a>
-                        <a href="/#how-it-works" className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-100/50 rounded-full transition-all">How it Works</a>
-                        <a href="/#about" className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-100/50 rounded-full transition-all">About</a>
-                        <a href="/#contact" className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-100/50 rounded-full transition-all">Contact</a>
+                    {/* Editorial Navigation */}
+                    <div className="hidden md:flex items-center gap-12">
+                        {[
+                            { name: 'THE SELECTION', href: '/#categories' },
+                            { name: 'OUR STORY', href: '/legal/about-us' },
+                            { name: 'KULA FITI', href: '/#app-download' },
+                        ].map((item) => (
+                            <a
+                                key={item.name}
+                                href={item.href}
+                                className="relative text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 hover:text-white transition-colors py-2 group"
+                            >
+                                {item.name}
+                                <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#4A90E2] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out" />
+                            </a>
+                        ))}
                     </div>
 
-                    {/* CTA Button */}
-                    <div className="flex items-center gap-3">
+                    {/* CTAs */}
+                    <div className="flex items-center gap-8">
                         <Link
                             to="/login"
-                            className="hidden md:flex text-sm font-bold text-gray-600 hover:text-black transition-colors px-4"
+                            className={`
+                                hidden md:flex items-center justify-center px-10 py-3.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] transition-all duration-500
+                                ${scrolled
+                                    ? 'bg-white text-black hover:bg-[#4A90E2] hover:text-white'
+                                    : 'bg-white/5 text-white hover:bg-white hover:text-black border border-white/10 hover:border-transparent'}
+                            `}
                         >
-                            Log in
-                        </Link>
-                        <Link
-                            to="/signup"
-                            className="hidden md:flex items-center gap-2 bg-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300"
-                        >
-                            Sign up
+                            Login
                         </Link>
 
                         {/* Mobile Toggle */}
                         <button
-                            className="md:hidden p-2.5 rounded-full hover:bg-gray-100 transition-colors"
+                            className="md:hidden p-2 text-white/50 hover:text-white transition-colors"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         >
-                            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                            {mobileMenuOpen ? <X size={24} strokeWidth={1} /> : <Menu size={24} strokeWidth={1} />}
                         </button>
                     </div>
+                </div>
+            </motion.nav>
 
-                </nav>
-            </div>
+            {/* High-End Mobile Menu Overlay */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-3xl pt-40 px-12 flex flex-col justify-between pb-16"
+                    >
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="absolute top-8 right-8 p-4 text-white/50 hover:text-white transition-colors"
+                        >
+                            <X size={32} strokeWidth={1} />
+                        </button>
+                        <div className="flex flex-col gap-10">
+                            {[
+                                { name: 'THE SELECTION', href: '/#categories' },
+                                { name: 'OUR STORY', href: '/legal/about-us' },
+                                { name: 'KULA FITI', href: '/#app-download' },
+                            ].map((item, i) => (
+                                <motion.a
+                                    key={item.name}
+                                    initial={{ x: -20, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ delay: 0.1 + (i * 0.08) }}
+                                    href={item.href}
+                                    className="text-5xl font-heading font-extralight tracking-tight text-white hover:text-[#4A90E2] transition-colors"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {item.name}
+                                </motion.a>
+                            ))}
+                        </div>
 
-            {/* Mobile Menu Overlay */}
-            {mobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-32 px-6">
-                    <div className="flex flex-col gap-6 text-center">
-                        {['Categories', 'How it Works', 'About', 'Contact'].map((item) => (
-                            <a
-                                key={item}
-                                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                                className="text-2xl font-heading font-semibold text-gray-900"
+                        <div className="grid grid-cols-1 gap-4">
+                            <Link
+                                to="/login"
+                                className="py-6 text-center text-[10px] font-bold uppercase tracking-[0.5em] bg-white text-black rounded-full"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                {item}
-                            </a>
-                        ))}
-                    </div>
-                    <div className="mt-12">
-                        <a href="/#app-download" className="btn btn-primary w-full py-4 text-lg rounded-xl" onClick={() => setMobileMenuOpen(false)}>
-                            Get the App
-                        </a>
-                    </div>
-                </div>
-            )}
+                                Login
+                            </Link>
+                            <Link
+                                to="/signup"
+                                className="py-6 text-center text-[10px] font-bold uppercase tracking-[0.5em] border border-white/10 text-white rounded-full"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                Join the Fam
+                            </Link>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 }

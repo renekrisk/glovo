@@ -1,4 +1,7 @@
 import { Instagram, Facebook, Twitter, Linkedin, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import appStoreIcon from '../assets/app-store-icon.png';
+import googlePlayIcon from '../assets/google-play-icon.png';
 
 
 export default function Footer() {
@@ -9,8 +12,8 @@ export default function Footer() {
                 {/* Newsletter */}
                 <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-20 border-b border-gray-900 pb-20">
                     <div className="max-w-xl">
-                        <h3 className="text-3xl font-heading font-bold mb-4">Stay in the loop.</h3>
-                        <p className="text-gray-400">Get exclusive deals, new restaurant partnerships, and delivery updates delivered to your inbox.</p>
+                        <h3 className="text-3xl font-heading font-bold mb-4">Join the Fam.</h3>
+                        <p className="text-gray-400">Get the 254 scoop: exclusive deals, city favorites, and the latest from the kitchens you love.</p>
                     </div>
                     <div className="w-full md:w-auto">
                         <form className="flex w-full md:w-96">
@@ -35,8 +38,8 @@ export default function Footer() {
                                 Munchezz<span className="text-[var(--primary)]">.</span>
                             </span>
                         </a>
-                        <p className="text-xs text-gray-500 leading-relaxed mb-6 max-w-[200px]">
-                            Munchezz is bridging the gap between national giants and local artisans. Empowering any business to sign up and deliver.
+                        <p className="text-white/40 text-[10px] uppercase tracking-widest leading-loose">
+                            Built for the city. Bringing Nairobi’s favorite kitchens and local gems straight to your door.
                         </p>
                         <div className="flex gap-3">
                             {[Instagram, Facebook, Twitter, Linkedin].map((Icon, i) => (
@@ -49,9 +52,9 @@ export default function Footer() {
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Services</h4>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">The Selection</h4>
                         <ul className="space-y-3">
-                            {['Restaurants', 'Groceries', 'Pharmacy', 'Healthy & Fresh', 'Comfort Classics', 'Sweet Treats'].map((item) => (
+                            {['The Kitchens', 'The Pantry', '254 Gems', 'The Oven', 'Home Favs', 'Sweet Fixes'].map((item) => (
                                 <li key={item}>
                                     <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">{item}</a>
                                 </li>
@@ -63,9 +66,19 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Company</h4>
                         <ul className="space-y-3">
-                            {['About Us', 'Careers', 'Blog', 'Press', 'Partner With Us', 'Join as Rider'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">{item}</a>
+                            {[
+                                { name: 'About Us', slug: 'about-us' },
+                                { name: 'Our Team', slug: 'our-team' },
+                                { name: 'Careers', slug: 'careers' },
+                                { name: 'Partner With Us', href: '/partner/login' },
+                                { name: 'Join as Rider', href: '/courier/login' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    {item.slug ? (
+                                        <Link to={`/legal/${item.slug}`} className="text-sm text-gray-400 hover:text-white transition-colors">{item.name}</Link>
+                                    ) : (
+                                        <Link to={item.href || '#'} className="text-sm text-gray-400 hover:text-white transition-colors">{item.name}</Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -75,9 +88,17 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Support</h4>
                         <ul className="space-y-3">
-                            {['Help Center', 'Contact Us', 'Track Order', 'FAQs', 'Terms of Service', 'Privacy Policy'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">{item}</a>
+                            {[
+                                { name: 'Help Center', slug: 'help-center' },
+                                { name: 'Contact Us', slug: 'contact-us' },
+                                { name: 'FAQs', slug: 'faq' },
+                                { name: 'Terms of Service', slug: 'terms-of-service' },
+                                { name: 'Privacy Policy', slug: 'privacy-policy' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link to={`/legal/${item.slug}`} className="text-sm text-gray-400 hover:text-white transition-colors">
+                                        {item.name}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -89,13 +110,21 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li>
                                 <div className="text-sm text-gray-400">
-                                    <p className="text-white font-medium mb-2">Download the app</p>
-                                    <div className="flex flex-col gap-2">
-                                        <a href="#" className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors">
-                                            <span className="text-xs">📱 App Store</span>
+                                    <p className="text-white font-heading font-light mb-4">The city in your pocket.</p>
+                                    <div className="flex flex-col gap-3">
+                                        <a href="#" className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-2xl hover:bg-[#4A90E2] hover:border-[#4A90E2] transition-all group overflow-hidden">
+                                            <img src={appStoreIcon} alt="App Store" className="w-10 h-10 rounded-lg shrink-0 object-contain invert" />
+                                            <div className="flex flex-col">
+                                                <span className="text-[8px] font-bold uppercase tracking-widest opacity-40 group-hover:opacity-60 text-white transition-opacity">Download on</span>
+                                                <span className="text-xs font-bold font-heading text-white">App Store</span>
+                                            </div>
                                         </a>
-                                        <a href="#" className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors">
-                                            <span className="text-xs">🤖 Google Play</span>
+                                        <a href="#" className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-2xl hover:bg-[#00A082] hover:border-[#00A082] transition-all group overflow-hidden">
+                                            <img src={googlePlayIcon} alt="Google Play" className="w-10 h-10 rounded-lg shrink-0 object-contain" />
+                                            <div className="flex flex-col">
+                                                <span className="text-[8px] font-bold uppercase tracking-widest opacity-40 group-hover:opacity-60 text-white transition-opacity">Get it on</span>
+                                                <span className="text-xs font-bold font-heading text-white">Google Play</span>
+                                            </div>
                                         </a>
                                     </div>
                                 </div>
@@ -115,9 +144,9 @@ export default function Footer() {
                 <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
                     <p>© 2025 Munchezz. All rights reserved.</p>
                     <div className="flex gap-6">
-                        <a href="#" className="hover:text-gray-400">Privacy Policy</a>
-                        <a href="#" className="hover:text-gray-400">Terms of Service</a>
-                        <a href="#" className="hover:text-gray-400">Cookie Settings</a>
+                        <Link to="/legal/privacy-policy" className="hover:text-gray-400">Privacy Policy</Link>
+                        <Link to="/legal/terms-of-service" className="hover:text-gray-400">Terms of Service</Link>
+                        <button className="hover:text-gray-400 text-left">Cookie Settings</button>
                     </div>
                 </div>
 

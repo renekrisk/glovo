@@ -1,11 +1,11 @@
 const reviews = [
     {
-        quote: "The intersection of speed and curated quality. Munchezz has managed to make daily delivery feel like an intentional lifestyle choice.",
+        quote: "Speed meets the city's top spots. Munchezz makes the daily crave feel like a vibe, not a chore.",
         author: "SARAH WANJIKU",
         location: "THIKA, KENYA"
     },
     {
-        quote: "An exercise in restraint and efficiency. As a partner, the clarity of their platform allows us to focus entirely on the craft of our kitchen.",
+        quote: "Real talk: managing a kitchen is easier when the delivery fleet is this sharp. They respect the craft.",
         author: "JAMES MBURU",
         location: "NAIROBI, KENYA"
     }
@@ -20,12 +20,12 @@ export default function Testimonials() {
 
                         {/* Static Editorial Header */}
                         <div className="lg:w-1/3 sticky top-32">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-800 mb-6 block">Refined Perspectives</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-800 mb-6 block">The City Voice</span>
                             <h2 className="text-4xl font-heading font-medium text-gray-900 leading-[1.1] mb-8">
-                                Testimonials.
+                                Real Talk.
                             </h2>
                             <p className="text-gray-500 font-light leading-relaxed">
-                                A selection of shared experiences from our global collective of patrons and partners.
+                                A few words from the people who keep the 254 moving. Built with heart, loved by Nairobi.
                             </p>
                         </div>
 

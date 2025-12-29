@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Collections from "../components/Collections";
@@ -35,17 +36,22 @@ export default function Home() {
                     {/* Merchant Canvas */}
                     <div className="flex-1 p-20 lg:p-32 border-b lg:border-b-0 lg:border-r border-gray-200/50 group relative overflow-hidden">
                         <div className="relative z-10 transition-transform duration-700 group-hover:-translate-y-2">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#D4AF37] mb-12 block">Merchant Collective</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#D4AF37] mb-12 block">The Collective</span>
                             <h2 className="text-5xl font-heading font-light text-white mb-10 leading-[1.1] tracking-tight">
-                                Elevate Your <br />
-                                Fine Selection.
+                                Build Your <br />
+                                Legacy.
                             </h2>
                             <p className="text-lg text-white/90 font-light max-w-sm mb-16 leading-relaxed">
-                                Join our network of intentional partners and scale your presence with absolute precision.
+                                Join a platform that respects the craft. From local kitchens to city favorites, we're building Nairobi's best together.
                             </p>
-                            <a href="#" className="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-white border-b border-white pb-2 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors">
-                                Apply to Partner
-                            </a>
+                            <div className="flex items-center gap-6">
+                                <Link to="/partner/signup" className="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-white border-b border-white pb-2 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors">
+                                    Join the Collective
+                                </Link>
+                                <Link to="/partner/login" className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors">
+                                    Login
+                                </Link>
+                            </div>
                         </div>
                         {/* Faint Texture */}
                         <div className="absolute inset-0 opacity-[0.03] grayscale pointer-events-none group-hover:opacity-[0.08] transition-opacity duration-1000">
@@ -56,17 +62,22 @@ export default function Home() {
                     {/* Rider Canvas */}
                     <div className="flex-1 p-20 lg:p-32 group relative overflow-hidden">
                         <div className="relative z-10 transition-transform duration-700 group-hover:-translate-y-2">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#D4AF37] mb-12 block">Courier Fleet</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#D4AF37] mb-12 block">The Movement</span>
                             <h2 className="text-5xl font-heading font-light text-white mb-10 leading-[1.1] tracking-tight">
-                                Sovereignty in <br />
-                                Every Journey.
+                                Own the <br />
+                                Streets.
                             </h2>
                             <p className="text-lg text-white/90 font-light max-w-sm mb-16 leading-relaxed">
-                                Curate your own time and experience the pinnacle of professional flexible earnings.
+                                Move with purpose. Join the city's most intentional courier network and earn on your own terms.
                             </p>
-                            <a href="#" className="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-white border-b border-white pb-2 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors">
-                                Join the Fleet
-                            </a>
+                            <div className="flex items-center gap-6">
+                                <Link to="/courier/signup" className="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-white border-b border-white pb-2 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors">
+                                    Join the Fleet
+                                </Link>
+                                <Link to="/courier/login" className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors">
+                                    Login
+                                </Link>
+                            </div>
                         </div>
                         {/* Faint Texture */}
                         <div className="absolute inset-0 opacity-[0.03] grayscale pointer-events-none group-hover:opacity-[0.08] transition-opacity duration-1000">

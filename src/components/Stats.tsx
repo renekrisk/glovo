@@ -3,27 +3,27 @@ import { Clock, Users, TrendingUp, ThumbsUp } from 'lucide-react';
 
 const stats = [
     {
-        value: "25",
+        value: "20",
         unit: "min",
-        label: "Avg. Connection",
+        label: "Village Market to Kilimani",
         icon: Clock
     },
     {
-        value: "500",
+        value: "1k",
         unit: "+",
-        label: "Diverse Partners",
+        label: "Nairobi's Best",
         icon: Users
     },
     {
         value: "24",
         unit: "/7",
-        label: "Reliable Support",
+        label: "City Pulse",
         icon: TrendingUp
     },
     {
-        value: "99",
+        value: "100",
         unit: "%",
-        label: "Partner Success",
+        label: "Trust the 254",
         icon: ThumbsUp
     }
 ];

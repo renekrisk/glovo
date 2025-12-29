@@ -5,29 +5,29 @@ import { Heart, Flame, Utensils, Globe, ArrowRight } from 'lucide-react';
 const collections = [
     {
         id: "01",
-        name: "Pure Wellness",
-        tagline: "Health & Vitality",
-        description: "Pharmaceutical care and essential hydration delivered with precision and discretion.",
-        image: "https://images.unsplash.com/photo-1576091160550-2173bdd99602?q=80&w=2080",
+        name: "The Morning Plug",
+        tagline: "Start it right",
+        description: "Warm pastries and fresh brews from the city's cult-favorite bakers.",
+        image: "https://images.unsplash.com/photo-1544681280-d25a782adc9b?q=80&w=2080",
         icon: Heart,
         layout: "lg:col-span-8 lg:pr-24",
         aspect: "aspect-[16/10] lg:aspect-[16/9]"
     },
     {
         id: "02",
-        name: "Artisan Bakes",
-        tagline: "Warmth & Soul",
-        description: "Daily rituals of fresh sourdough and delicate pastries from local master bakers.",
-        image: "https://images.unsplash.com/photo-1544681280-d25a782adc9b?q=80&w=2099",
+        name: "Kula Fiti",
+        tagline: "Always Comforting",
+        description: "The flavors that feel like home, handled with respect and delivered fast.",
+        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=2099",
         icon: Flame,
         layout: "lg:col-span-4 lg:mt-80",
         aspect: "aspect-[4/5]"
     },
     {
         id: "03",
-        name: "Global Gastronomy",
-        tagline: "The Culinary World",
-        description: "Michelin-recognized menus and curated dining experiences from the world's best chefs.",
+        name: "Hidden Gems",
+        tagline: "The Vault",
+        description: "Exclusive menus from Nairobi's most high-end kitchens.",
         image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2028",
         icon: Utensils,
         layout: "lg:col-span-5 lg:-mt-40",
@@ -35,9 +35,9 @@ const collections = [
     },
     {
         id: "04",
-        name: "Daily Provisions",
-        tagline: "Curated Essentials",
-        description: "Farm-fresh produce and high-end pantry staples sourced from local and global markets.",
+        name: "The Daily Hustle",
+        tagline: "Essentials",
+        description: "Everything you need from the supermarket, minus the traffic.",
         image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2087",
         icon: Globe,
         layout: "lg:col-span-7 lg:mt-20 lg:pl-12",
@@ -93,14 +93,14 @@ export default function Collections() {
                             viewport={{ once: true }}
                             className="text-[10px] font-bold uppercase tracking-[0.8em] text-gray-900/40 block ml-1"
                         >
-                            Curated Selection
+                            The 254 Selection
                         </motion.span>
                         <motion.h2
                             style={{ y: titleY }}
                             className="text-6xl md:text-9xl font-heading font-light text-gray-900 leading-[0.8] tracking-tighter"
                         >
-                            The Pursuit <br />
-                            <span className="text-gray-900/10 italic">of Perfection</span>.
+                            The Nairobi <br />
+                            <span className="text-gray-900/10 italic">Select.</span>
                         </motion.h2>
                     </div>
                 </div>

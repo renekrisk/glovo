@@ -9,21 +9,21 @@ export default function HowItWorks() {
     const steps = [
         {
             icon: Search,
-            title: "Equitable Discovery",
-            description: "From global supermarkets to local artisanal bakeries. We curate a selection that empowers every business to shine.",
-            id: "Step 01"
+            title: "Pick Your Crave",
+            description: "Browse the city’s best. From local favorites to big brands, we've got the 254 flavor.",
+            id: "Phase 01"
         },
         {
             icon: ShoppingCart,
-            title: "Seamless Integration",
-            description: "Our platform bridges the technological gap, allowing even the smallest boutiques to handle high-demand delivery with ease.",
-            id: "Step 02"
+            title: "Easy Tap",
+            description: "No stress, no drama. Just one tap and the kitchen is on it.",
+            id: "Phase 02"
         },
         {
             icon: Package,
-            title: "Reliable Connection",
-            description: "A professional delivery fleet that treats every package—from water jugs to fine dining—with premium care.",
-            id: "Step 03"
+            title: "Doorstep Magic",
+            description: "Sit back and relax. We navigate the Nairobi traffic so you don’t have to.",
+            id: "Phase 03"
         }
     ];
 
@@ -52,8 +52,8 @@ export default function HowItWorks() {
                             The Narrative
                         </span>
                         <h2 className="text-5xl md:text-7xl font-heading font-light text-gray-900 leading-[1.1] tracking-tighter mb-8">
-                            Bridging the gap <br />
-                            between <span className="text-gray-900/40 italic">vision</span> and <span className="text-gray-900/40">delivery</span>.
+                            How we move <br />
+                            <span className="text-gray-900/40 italic">the city</span>.
                         </h2>
                     </motion.div>
                 </div>
@@ -104,7 +104,7 @@ export default function HowItWorks() {
                 >
                     <div className="flex flex-col md:flex-row items-center justify-between gap-12">
                         <p className="text-2xl md:text-3xl font-heading font-light text-gray-900/80 leading-relaxed italic max-w-lg">
-                            "The pinnacle of convenience is not just speed, but the absolute peace of mind that follows."
+                            "Built by people who love food as much as you do. Pure city energy."
                         </p>
                         <a
                             href="#categories"

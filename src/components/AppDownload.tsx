@@ -26,13 +26,13 @@ export default function AppDownload() {
                         viewport={{ once: true }}
                         className="space-y-8"
                     >
-                        <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/60 block">Experience Munchezz</span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/60 block">Get the App</span>
                         <h2 className="text-5xl md:text-6xl font-heading font-light text-white leading-[1.1] tracking-tight">
-                            The world at your <br />
-                            <span className="text-white/30 italic text-6xl">fingertips.</span>
+                            The city in your <br />
+                            <span className="text-white/30 italic text-6xl">pocket.</span>
                         </h2>
                         <p className="text-xl text-white/70 font-light leading-relaxed max-w-md">
-                            Download the Munchezz application to bridge the gap between choice and delivery.
+                            Tap into the best of Nairobi. From local bakes to fine dining, it's all on Munchezz.
                         </p>
                     </motion.div>
 
@@ -44,10 +44,10 @@ export default function AppDownload() {
                         viewport={{ once: true }}
                         className="flex gap-8 items-center"
                     >
-                        <a href="#" className="transition-all duration-500 hover:scale-110 hover:-translate-y-1">
-                            <img src={appStoreIcon} alt="App Store" className="w-16 h-16 shadow-2xl rounded-2xl" />
+                        <a href="#" className="transition-all duration-500 hover:scale-110 hover:-translate-y-1 p-1 hover:bg-[#4A90E2] rounded-[22px]">
+                            <img src={appStoreIcon} alt="App Store" className="w-16 h-16 shadow-2xl rounded-2xl invert" />
                         </a>
-                        <a href="#" className="transition-all duration-500 hover:scale-110 hover:-translate-y-1">
+                        <a href="#" className="transition-all duration-500 hover:scale-110 hover:-translate-y-1 p-1 hover:bg-white/10 rounded-[22px]">
                             <img src={googlePlayIcon} alt="Google Play" className="w-16 h-16 shadow-2xl rounded-2xl" />
                         </a>
                     </motion.div>

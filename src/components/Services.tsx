@@ -4,46 +4,37 @@ import { useRef } from 'react';
 const offerings = [
     {
         id: "01",
-        category: "Gastronomy",
-        title: "Premier Restaurants",
-        description: "From Michelin-starred kitchens to the finest local comfort favorites.",
+        category: "The Kitchens",
+        title: "Nairobi’s Best",
+        description: "From Westlands' fine dining to the hidden gems of Kilimani. We bring the flavors we love, handled with respect.",
         image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000",
         aspect: "aspect-[3/4]"
     },
     {
         id: "02",
-        category: "Provisions",
-        title: "Supermarkets",
-        description: "Fresh produce and daily essentials from curated neighborhood markets.",
+        category: "The Pantry",
+        title: "Fresh Provisions",
+        description: "Farm-to-fork goodness from local markets and the supermarkets you trust.",
         image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000",
         aspect: "aspect-[4/5]",
         offset: "lg:mt-32"
     },
     {
         id: "03",
-        category: "Wellness",
-        title: "Pharmacies",
-        description: "Discreet and rapid delivery for your health and personal care needs.",
-        image: "https://images.unsplash.com/photo-1576091160550-2173bdd99602?q=80&w=1000",
+        category: "The Care",
+        title: "Pharmacy & Wellness",
+        description: "Quick, discreet delivery for your health essentials when you need them most.",
+        image: "https://plus.unsplash.com/premium_photo-1671721438260-1adb3749253f?q=80&w=1000",
         aspect: "aspect-[3/4]"
     },
     {
         id: "04",
-        category: "Rituals",
-        title: "Bakeries",
-        description: "Warm, artisanal breads and delicate pastries baked with artisanal heart.",
+        category: "The Oven",
+        title: "Artisan Bakes",
+        description: "Warm pastries and fresh sourdough from the city’s favorite artisan bakers.",
         image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000",
         aspect: "aspect-[4/5]",
         offset: "lg:-mt-24"
-    },
-    {
-        id: "05",
-        category: "Essential",
-        title: "Water Delivery",
-        description: "Pure, chilled, and dependable. The foundation of your daily life, curated.",
-        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1000",
-        aspect: "aspect-[3/4]",
-        offset: "lg:-mt-32"
     }
 ];
 
@@ -76,8 +67,8 @@ export default function Services() {
                             >
                                 <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-white/40 mb-6 block">Offerings</span>
                                 <h2 className="text-5xl md:text-7xl font-heading font-light text-white leading-[1.1] tracking-tighter">
-                                    Bridging the <br />
-                                    <span className="text-white/30 italic">Gap</span>.
+                                    Your City, <br />
+                                    <span className="text-white/30 italic">Served</span>.
                                 </h2>
                             </motion.div>
 
@@ -90,10 +81,10 @@ export default function Services() {
                             >
                                 <div className="h-px w-20 bg-white/20" />
                                 <p className="text-xl text-white/60 font-light leading-relaxed italic">
-                                    "Empowering any business to participate in the luxury of rapid, intentional commerce."
+                                    "Bringing the street food soul and the city's top spots to one table."
                                 </p>
                                 <p className="text-sm text-white/40 font-light leading-relaxed">
-                                    Our ecosystem is designed for those who value time and quality above all else. Every partner is hand-selected to ensure your experience remains unparalleled.
+                                    Munchezz connects you to the heartbeat of Nairobi. We bring the big brands and the local legends together on one platform, delivered by the ones who know the city best.
                                 </p>
                             </motion.div>
                         </div>
