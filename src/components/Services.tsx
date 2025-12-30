@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const offerings = [
     {
@@ -136,7 +136,7 @@ export default function Services() {
                 {/* Mobile: Horizontal Snap Scroll (Preserved) */}
                 <div className="lg:hidden -mx-6">
                     <div className="flex overflow-x-auto gap-6 snap-x snap-mandatory px-6 pb-12 scrollbar-hide">
-                        {offerings.map((item, index) => (
+                        {offerings.map((item) => (
                             <div
                                 key={item.id}
                                 className="relative shrink-0 w-[85vw] aspect-[4/5] rounded-[2rem] overflow-hidden snap-center group"
