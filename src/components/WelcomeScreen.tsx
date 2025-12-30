@@ -48,7 +48,7 @@ export default function WelcomeScreen({ onComplete }: WelcomeScreenProps) {
                             initial="initial"
                             animate="animate"
                         >
-                            {['M', 'u', 'n', 'c', 'h', 'e', 'z', 'z'].map((letter, i) => (
+                            {['M', 'u', 'n', 'c', 'h', 'e', 'e', 'z'].map((letter, i) => (
                                 <motion.span
                                     key={i}
                                     variants={letterVariants}

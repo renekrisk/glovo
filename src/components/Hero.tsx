@@ -12,7 +12,7 @@ export default function Hero() {
     };
 
     return (
-        <section ref={ref} className="relative h-screen supports-[height:100dvh]:h-[100dvh] min-h-[600px] flex items-center justify-center bg-black overflow-hidden">
+        <section ref={ref} className="relative h-screen supports-[height:100dvh]:h-[100dvh] md:min-h-[600px] flex items-center justify-center bg-black overflow-hidden">
 
             {/* Cinematic Background Layer - Static */}
             <div className="absolute inset-0 z-0">
