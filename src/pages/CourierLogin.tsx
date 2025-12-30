@@ -15,7 +15,7 @@ export default function CourierLogin() {
                 </Link>
                 <Link to="/" className="flex justify-center mb-6 text-gray-900 hover:text-[#00A082] transition-colors">
                     <span className="font-heading font-bold text-3xl tracking-tighter">
-                        Munchezz<span className="text-[#00A082]">.</span>
+                        Muncheez<span className="text-[#00A082]">.</span>
                     </span>
                 </Link>
                 <h2 className="text-center text-3xl font-heading font-light text-gray-900 tracking-tight">
@@ -49,7 +49,7 @@ export default function CourierLogin() {
                                     type="email"
                                     required
                                     className="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-2xl bg-gray-50 focus:outline-none focus:ring-1 focus:ring-[#00A082] focus:border-[#00A082] sm:text-sm transition-all"
-                                    placeholder="rider@munchezz.com"
+                                    placeholder="rider@muncheez.com"
                                 />
                             </div>
                         </div>

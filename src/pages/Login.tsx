@@ -41,7 +41,7 @@ export default function Login() {
                     <div className="flex items-center justify-between mb-8">
                         <Link to="/" className="inline-block">
                             <span className="font-heading font-bold text-3xl tracking-tighter text-gray-900">
-                                Munchezz<span className="text-[#4A90E2]">.</span>
+                                Muncheez<span className="text-[#4A90E2]">.</span>
                             </span>
                         </Link>
                     </div>

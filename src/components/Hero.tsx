@@ -51,7 +51,7 @@ export default function Hero() {
                     transition={{ duration: 1, delay: 0.2 }}
                     className="text-8xl lg:text-9xl font-heading font-extralight tracking-tight text-white leading-[0.8] mb-12"
                 >
-                    Munchezz<span className="text-[#4A90E2]">.</span>
+                    Muncheez<span className="text-[#4A90E2]">.</span>
                 </motion.h1>
 
                 <motion.p
@@ -124,7 +124,7 @@ export default function Hero() {
                         transition={{ delay: 0.2 }}
                         className="text-xs text-white/50 font-medium uppercase tracking-[0.3em] mb-6"
                     >
-                        Munchezz: <br /> 254 Delivered.
+                        Muncheez: <br /> 254 Delivered.
                     </motion.p>
 
                     <motion.div

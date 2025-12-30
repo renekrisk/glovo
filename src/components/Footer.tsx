@@ -38,7 +38,7 @@ export default function Footer() {
                     <div className="col-span-1 md:col-span-1 border-b border-white/5 pb-12 md:border-none md:pb-0">
                         <a href="#" className="flex items-center gap-2 mb-8">
                             <span className="font-heading font-extrabold text-2xl tracking-tighter text-white">
-                                Munchezz<span className="text-[#4A90E2]">.</span>
+                                Muncheez<span className="text-[#4A90E2]">.</span>
                             </span>
                         </a>
                         <p className="text-white/40 text-[11px] uppercase tracking-widest leading-loose mb-8">
@@ -132,7 +132,7 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.2em] text-white/20">
-                    <p>© 2025 Munchezz. Built for Nairobi.</p>
+                    <p>© 2025 Muncheez. Built for Nairobi.</p>
                     <div className="flex flex-wrap justify-center gap-8">
                         <Link to="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link to="/legal/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>

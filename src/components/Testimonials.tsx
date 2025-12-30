@@ -1,6 +1,6 @@
 const reviews = [
     {
-        quote: "Speed meets the city's top spots. Munchezz makes the daily crave feel like a vibe, not a chore.",
+        quote: "Speed meets the city's top spots. Muncheez makes the daily crave feel like a vibe, not a chore.",
         author: "SARAH WANJIKU",
         location: "THIKA, KENYA"
     },

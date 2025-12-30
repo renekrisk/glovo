@@ -55,7 +55,7 @@ export default function Navbar() {
                         {/* Brand */}
                         <Link to="/" className="hidden md:flex items-center gap-2 group">
                             <span className="font-heading font-bold text-lg md:text-2xl tracking-tighter text-white">
-                                Munchezz<span className="text-[#4A90E2]">.</span>
+                                Muncheez<span className="text-[#4A90E2]">.</span>
                             </span>
                         </Link>
                     </div>
@@ -121,7 +121,7 @@ export default function Navbar() {
                             className="absolute top-8 left-8 flex items-center gap-2 group"
                         >
                             <span className="font-heading font-bold text-2xl tracking-tighter text-white">
-                                Munchezz<span className="text-[#4A90E2]">.</span>
+                                Muncheez<span className="text-[#4A90E2]">.</span>
                             </span>
                         </Link>
 

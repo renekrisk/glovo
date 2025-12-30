@@ -32,7 +32,7 @@ export default function AppDownload() {
                             <span className="text-white/30 italic text-5xl md:text-6xl">pocket.</span>
                         </h2>
                         <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-md">
-                            Tap into the best of Nairobi. From local bakes to fine dining, it's all on Munchezz.
+                            Tap into the best of Nairobi. From local bakes to fine dining, it's all on Muncheez.
                         </p>
                     </motion.div>
 
