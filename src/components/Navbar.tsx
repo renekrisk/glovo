@@ -146,7 +146,7 @@ export default function Navbar() {
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ delay: 0.1 + (i * 0.08) }}
                                     href={item.href}
-                                    className="text-4xl font-heading font-extralight tracking-tight text-white hover:text-[#4A90E2] transition-colors"
+                                    className="text-3xl font-heading font-extralight tracking-tight text-white hover:text-[#4A90E2] transition-colors"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     {item.name}
