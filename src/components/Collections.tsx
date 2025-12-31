@@ -5,9 +5,9 @@ import { Heart, Flame, Utensils, Globe, ArrowRight } from 'lucide-react';
 const collections = [
     {
         id: "01",
-        name: "Morning Plug",
-        tagline: "Start it right",
-        description: "Warm pastries and fresh brews from cult-favorite bakers.",
+        name: "Morning Dew",
+        tagline: "The Early Rise",
+        description: "Artisan coffee, flaky pastries, and the city’s most famous hidden bakeries.",
         image: "https://images.unsplash.com/photo-1544681280-d25a782adc9b?q=60&w=800&auto=format&fit=crop",
         icon: Heart,
         span: "lg:col-span-8 lg:row-span-2",
@@ -15,9 +15,9 @@ const collections = [
     },
     {
         id: "02",
-        name: "Hidden Gems",
-        tagline: "The Vault",
-        description: "Exclusive menus from Nairobi's most high-end kitchens.",
+        name: "Street Kings",
+        tagline: "The Hustle",
+        description: "The absolute best of local food carts—unfiltered flavors that define the city.",
         image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=60&w=800&auto=format&fit=crop",
         icon: Utensils,
         span: "lg:col-span-4 lg:row-span-2",
@@ -26,8 +26,8 @@ const collections = [
     {
         id: "03",
         name: "Kula Fiti",
-        tagline: "Comfort Food",
-        description: "The flavors that feel like home, handled with respect.",
+        tagline: "The Balance",
+        description: "Clean, organic, and locally-sourced meals for when your body needs a reset.",
         image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=60&w=800&auto=format&fit=crop",
         icon: Flame,
         span: "lg:col-span-4",
@@ -35,10 +35,10 @@ const collections = [
     },
     {
         id: "04",
-        name: "Daily Hustle",
-        tagline: "Essentials",
-        description: "Everything you need from the supermarket, minus the traffic.",
-        image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=60&w=800&auto=format&fit=crop",
+        name: "The Vault",
+        tagline: "Elite Selection",
+        description: "Exclusive menus from the city’s premier kitchens. Reserved for the bold.",
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
         icon: Globe,
         span: "lg:col-span-8",
         aspect: "aspect-[4/3] lg:h-[400px]"

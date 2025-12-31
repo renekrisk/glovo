@@ -1,38 +1,38 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const offerings = [
     {
         id: "01",
-        category: "Restaurant Delivery",
+        category: "Fine Dining to Street Eats",
         title: "The Kitchens",
-        description: "From Westlands' fine dining to the hidden gems of Kilimani. Delivered hot.",
+        description: "From Westlands' boutique dining to the legendary food carts of the city center. Delivered with soul.",
         image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200",
         color: "#F5F5F5"
     },
     {
         id: "02",
-        category: "Supermarket & Retail",
-        title: "The Pantry",
-        description: "Farm-to-fork goodness and household essentials from the supermarkets you trust.",
+        category: "Supermarkets & Mama Mboga",
+        title: "The Market",
+        description: "Full supermarket hauls and fresh produce from local stalls, handled with the respect they deserve.",
         image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200",
         color: "#E0E0E0"
     },
     {
         id: "03",
-        category: "Health & Wellness",
-        title: "The Pharmacy",
-        description: "Quick, discreet delivery for your health essentials when you need them most.",
-        image: "https://plus.unsplash.com/premium_photo-1671721438260-1adb3749253f?q=80&w=1200",
+        category: "Bakeries & Florists",
+        title: "Bakes & Blooms",
+        description: "Artisan sourdough, delicate pastries, and the city’s most vibrant floral arrangements.",
+        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200",
         color: "#F5F5F5"
     },
     {
         id: "04",
-        category: "Bakery & Cafe",
-        title: "The Morning",
-        description: "Warm pastries and fresh sourdough from the city’s favorite artisan bakers.",
-        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200",
+        category: "Health & Hydration",
+        title: "The Apothecary",
+        description: "Quick, discreet pharmacy essentials and professional-grade water delivery for your home.",
+        image: "https://plus.unsplash.com/premium_photo-1671721438260-1adb3749253f?q=80&w=1200",
         color: "#E0E0E0"
     }
 ];
@@ -79,7 +79,7 @@ export default function Services() {
                             layout
                             initial={{ flex: 1 }}
                             animate={{ flex: activeId === item.id ? 3 : 1 }}
-                            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                             onHoverStart={() => setActiveId(item.id)}
                             onClick={() => setActiveId(item.id)}
                         >
@@ -95,39 +95,53 @@ export default function Services() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
 
                             {/* Content */}
-                            <div className="absolute bottom-0 left-0 w-full p-10 flex flex-col justify-end">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${activeId === item.id ? 'bg-white text-black border-white' : 'text-white/60 border-white/20'}`}>
-                                        {item.category}
-                                    </span>
+                            <div className="absolute bottom-0 left-0 w-full p-10 flex flex-col justify-end h-full">
+                                <div className="flex flex-col">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{
+                                            opacity: 1,
+                                            y: 0,
+                                            transition: { delay: 0.1 }
+                                        }}
+                                        className="flex items-center gap-4 mb-4"
+                                    >
+                                        <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border transition-colors duration-500 ${activeId === item.id ? 'bg-white text-black border-white' : 'text-white/60 border-white/20'}`}>
+                                            {item.category}
+                                        </span>
+                                    </motion.div>
+
+                                    <h3 className={`font-heading font-light tracking-tight transition-colors duration-300 ${activeId === item.id ? 'text-5xl text-white' : 'text-3xl text-white/70'}`}>
+                                        {item.title}
+                                    </h3>
+
+                                    {/* Simplified Reveal */}
+                                    <div className="h-4" /> {/* Fixed Spacer */}
+                                    <AnimatePresence initial={false}>
+                                        {activeId === item.id && (
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                                transition={{ duration: 0.2 }}
+                                            >
+                                                <p className="text-lg text-white/80 font-light leading-relaxed max-w-md mb-8">
+                                                    {item.description}
+                                                </p>
+                                                <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-white/80 transition-colors group/btn">
+                                                    Explore
+                                                    <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                                                </button>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
-
-                                <h3 className={`font-heading font-light tracking-tight transition-all duration-300 ${activeId === item.id ? 'text-5xl mb-6' : 'text-3xl mb-2 text-white/80'}`}>
-                                    {item.title}
-                                </h3>
-
-                                {/* Description - Only Visible when Active */}
-                                <motion.div
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{
-                                        opacity: activeId === item.id ? 1 : 0,
-                                        height: activeId === item.id ? 'auto' : 0
-                                    }}
-                                    className="overflow-hidden"
-                                >
-                                    <p className="text-lg text-white/80 font-light leading-relaxed max-w-md mb-8">
-                                        {item.description}
-                                    </p>
-                                    <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-white/80 transition-colors group/btn">
-                                        Explore
-                                        <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                                    </button>
-                                </motion.div>
                             </div>
 
-                            {/* ID Number (Top Right) */}
                             <div className="absolute top-8 right-8">
-                                <span className="text-xl font-heading font-bold text-white/20">{item.id}</span>
+                                <span className="text-xl font-heading font-bold text-white/20 block">
+                                    {item.id}
+                                </span>
                             </div>
                         </motion.div>
                     ))}
