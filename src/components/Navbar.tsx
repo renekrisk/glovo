@@ -15,7 +15,8 @@ export default function Navbar() {
         '/partner/login',
         '/partner/signup',
         '/courier/login',
-        '/courier/signup'
+        '/courier/signup',
+        '/admin/login'
     ];
 
     useEffect(() => {

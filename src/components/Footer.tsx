@@ -131,6 +131,7 @@ export default function Footer() {
                     <div className="flex flex-wrap justify-center gap-8">
                         <Link to="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link to="/legal/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+                        <Link to="/admin/login" className="hover:text-white transition-colors">Admin Login</Link>
                         <button className="hover:text-white transition-colors">Cookie Settings</button>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ import PartnerSignup from "./pages/PartnerSignup";
 import CourierLogin from "./pages/CourierLogin";
 import CourierSignup from "./pages/CourierSignup";
 import LegalPage from "./pages/LegalPage";
+import AdminLogin from "./pages/AdminLogin";
 import WelcomeScreen from "./components/WelcomeScreen";
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
           {/* Courier Auth */}
           <Route path="/courier/login" element={<CourierLogin />} />
           <Route path="/courier/signup" element={<CourierSignup />} />
+          {/* Admin Auth */}
+          <Route path="/admin/login" element={<AdminLogin />} />
         </Routes>
       </div>
     </Router>
