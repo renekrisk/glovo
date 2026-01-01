@@ -19,7 +19,7 @@ export default function Footer() {
                         </p>
                     </div>
                     <div className="w-full lg:w-auto">
-                        <form className="flex w-full md:w-96 relative">
+                        <form className="flex w-full md:w-96 relative" onSubmit={(e) => e.preventDefault()}>
                             <input
                                 type="email"
                                 placeholder="Your email address"
@@ -35,19 +35,32 @@ export default function Footer() {
                 <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12 lg:gap-12 mb-16">
                     {/* Identity - Compact Branding */}
                     <div className="col-span-2 lg:col-span-1 border-b lg:border-none border-white/5 pb-10 lg:pb-0">
-                        <a href="#" className="flex items-center gap-2 mb-6">
+                        <Link to="/" className="flex items-center gap-2 mb-6">
                             <span className="font-heading font-extrabold text-xl tracking-tighter text-white">
                                 Muncheez<span className="text-[#4A90E2]">.</span>
                             </span>
-                        </a>
+                        </Link>
                         <p className="text-white/20 text-[10px] uppercase tracking-widest leading-relaxed mb-6 max-w-xs">
                             Bringing Nairobi’s favorite kitchens straight to your door.
                         </p>
                         <div className="flex gap-3">
-                            {[Instagram, Facebook, Twitter, Linkedin].map((Icon, i) => (
-                                <a key={i} href="#" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:bg-white hover:text-black transition-all border border-white/10">
-                                    <Icon size={14} />
-                                </a>
+                            {[
+                                { Icon: Instagram, name: 'Instagram', status: 'unavailable' },
+                                { Icon: Facebook, name: 'Facebook', status: 'unavailable' },
+                                { Icon: Twitter, name: 'Twitter', status: 'unavailable' },
+                                { Icon: Linkedin, name: 'LinkedIn', status: 'unavailable' }
+                            ].map((social, i) => (
+                                <Link
+                                    key={i}
+                                    to="/coming-soon"
+                                    state={{
+                                        name: `Our ${social.name}`,
+                                        status: social.status
+                                    }}
+                                    className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:bg-white hover:text-black transition-all border border-white/10"
+                                >
+                                    <social.Icon size={14} />
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -58,7 +71,13 @@ export default function Footer() {
                         <ul className="space-y-3">
                             {['The Kitchens', 'The Pantry', '254 Gems', 'The Oven', 'Home Favs'].map((item) => (
                                 <li key={item}>
-                                    <a href="#" className="text-xs text-white/40 hover:text-white transition-colors font-light tracking-wide">{item}</a>
+                                    <Link
+                                        to="/coming-soon"
+                                        state={{ name: item, status: 'coming soon' }}
+                                        className="text-xs text-white/40 hover:text-white transition-colors font-light tracking-wide"
+                                    >
+                                        {item}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -108,30 +127,30 @@ export default function Footer() {
                     <div className="col-span-1 lg:col-span-1">
                         <h4 className="text-[9px] font-bold text-white/20 uppercase tracking-[0.3em] mb-6">Get App</h4>
                         <div className="flex flex-col gap-3">
-                            <a href="#" className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-xl hover:bg-[#4A90E2] hover:border-[#4A90E2] transition-all group overflow-hidden">
+                            <Link to="/coming-soon" state={{ name: "The iOS App" }} className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-xl hover:bg-[#4A90E2] hover:border-[#4A90E2] transition-all group overflow-hidden">
                                 <img src={appStoreIcon} alt="App Store" className="w-6 h-6 rounded-lg shrink-0 object-contain invert opacity-30 group-hover:opacity-100 transition-opacity" />
                                 <div className="flex flex-col">
                                     <span className="text-[7px] font-bold uppercase tracking-widest text-white/20 group-hover:text-white transition-colors">App Store</span>
                                 </div>
-                            </a>
-                            <a href="#" className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-xl hover:bg-[#00A082] hover:border-[#00A082] transition-all group overflow-hidden">
+                            </Link>
+                            <Link to="/coming-soon" state={{ name: "The Android App" }} className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-xl hover:bg-[#00A082] hover:border-[#00A082] transition-all group overflow-hidden">
                                 <img src={googlePlayIcon} alt="Google Play" className="w-6 h-6 rounded-lg shrink-0 object-contain opacity-30 group-hover:opacity-100 transition-opacity" />
                                 <div className="flex flex-col">
                                     <span className="text-[7px] font-bold uppercase tracking-widest text-white/20 group-hover:text-white transition-colors">Play Store</span>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.2em] text-white/20">
-                    <p>© 2025 Muncheez. Built for Nairobi.</p>
+                    <p>© 2026 Muncheez. Built for Nairobi.</p>
                     <div className="flex flex-wrap justify-center gap-8">
                         <Link to="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link to="/legal/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
                         <Link to="/admin/login" className="hover:text-white transition-colors">Admin Login</Link>
-                        <button className="hover:text-white transition-colors">Cookie Settings</button>
+                        <Link to="/coming-soon" state={{ name: "Cookie Settings" }} className="hover:text-white transition-colors">Cookie Settings</Link>
                     </div>
                 </div>
 

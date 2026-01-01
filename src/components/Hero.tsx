@@ -94,11 +94,11 @@ export default function Hero() {
 
 
             {/* 
-                MOBILE LAYOUT (Corner Tension)
+                MOBILE LAYOUT (Corner Tension - Optimized for Small Screens)
                 Top-Right: Brand Editorial
                 Bottom-Left: Action & Utility
             */}
-            <div className="md:hidden absolute inset-0 p-8 flex flex-col justify-between pt-24 pb-20">
+            <div className="md:hidden absolute inset-0 p-6 flex flex-col justify-between pt-24 pb-12 supports-[height:100dvh]:pb-24">
 
                 {/* Top Right Zone */}
                 <div className="flex flex-col items-end">
@@ -108,23 +108,23 @@ export default function Hero() {
                         animate="animate"
                         className="text-right"
                     >
-                        <span className="block text-[9px] font-bold text-[#D4AF37] uppercase tracking-[0.4em] mb-2">Selection 01</span>
-                        <h2 className="text-4xl font-serif italic font-light text-white leading-tight">
-                            The <br /> Nairobi <br /> <span className="font-sans font-bold not-italic text-5xl tracking-tighter">SELECTION.</span>
+                        <span className="block text-[8px] font-bold text-[#D4AF37] uppercase tracking-[0.3em] mb-2">Selection 01</span>
+                        <h2 className="text-3xl font-serif italic font-light text-white leading-tight">
+                            The <br /> Nairobi <br /> <span className="font-sans font-bold not-italic text-4xl tracking-tighter">SELECTION.</span>
                         </h2>
                     </motion.div>
                 </div>
 
                 {/* Bottom Left Zone */}
-                <div className="flex flex-col items-start">
+                <div className="flex flex-col items-start w-full">
                     <motion.p
                         variants={fadeScale}
                         initial="initial"
                         animate="animate"
                         transition={{ delay: 0.2 }}
-                        className="text-xs text-white/50 font-medium uppercase tracking-[0.3em] mb-6"
+                        className="text-[10px] text-white/50 font-bold uppercase tracking-[0.3em] mb-4"
                     >
-                        Muncheez: <br /> 254 Delivered.
+                        Muncheez: 254 Delivered.
                     </motion.p>
 
                     <motion.div
@@ -132,19 +132,19 @@ export default function Hero() {
                         initial="initial"
                         animate="animate"
                         transition={{ delay: 0.4 }}
-                        className="w-full flex flex-col gap-4"
+                        className="w-full flex flex-col gap-3"
                     >
-                        <div className="relative group">
-                            <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
+                        <div className="relative group w-full">
+                            <Search size={14} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
                             <input
                                 type="text"
                                 placeholder="Enter address"
-                                className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/30 pl-11 pr-4 py-3.5 rounded-xl outline-none backdrop-blur-md focus:bg-white/10 transition-all text-sm"
+                                className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/30 pl-10 pr-4 py-3 rounded-xl outline-none backdrop-blur-md focus:bg-white/10 transition-all text-sm h-12"
                             />
                         </div>
-                        <button className="bg-white text-black font-bold py-4 rounded-xl flex items-center justify-center gap-3 active:scale-95 transition-transform">
-                            Order
-                            <ArrowRight size={16} />
+                        <button className="w-full bg-white text-black font-bold h-12 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform text-sm">
+                            Order Now
+                            <ArrowRight size={14} />
                         </button>
                     </motion.div>
                 </div>

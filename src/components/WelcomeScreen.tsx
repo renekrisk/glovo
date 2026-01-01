@@ -1,6 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
+/**
+ * WELCOME SCREEN
+ * Redesigned for maximum "wow". 
+ * - Branding: Muncheez. (Blue Dot)
+ * - Motion: Staggered reveal + cinematic grain.
+ */
 interface WelcomeScreenProps {
     onComplete: () => void;
 }
@@ -11,27 +17,13 @@ export default function WelcomeScreen({ onComplete }: WelcomeScreenProps) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(false);
-            setTimeout(onComplete, 1000);
-        }, 4000);
+            setTimeout(onComplete, 800);
+        }, 3500);
 
         return () => clearTimeout(timer);
     }, [onComplete]);
 
     const EASE = [0.16, 1, 0.3, 1] as const;
-
-    const letterVariants = {
-        initial: { y: 100, opacity: 0 },
-        animate: { y: 0, opacity: 1, transition: { duration: 1, ease: EASE } }
-    };
-
-    const containerVariants = {
-        animate: {
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.3
-            }
-        }
-    };
 
     return (
         <AnimatePresence>
@@ -39,57 +31,50 @@ export default function WelcomeScreen({ onComplete }: WelcomeScreenProps) {
                 <motion.div
                     className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center overflow-hidden h-screen supports-[height:100dvh]:h-[100dvh]"
                     initial={{ opacity: 1 }}
-                    exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)", transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } }}
+                    exit={{ opacity: 0, scale: 1.05, filter: "blur(20px)", transition: { duration: 0.8, ease: EASE } }}
                 >
-                    <div className="relative z-10 text-center px-4 w-full">
-                        <motion.div
-                            className="overflow-hidden flex items-center justify-center gap-0.5 md:gap-3 mb-8 md:mb-6"
-                            variants={containerVariants}
-                            initial="initial"
-                            animate="animate"
-                        >
-                            {['M', 'u', 'n', 'c', 'h', 'e', 'e', 'z'].map((letter, i) => (
-                                <motion.span
-                                    key={i}
-                                    variants={letterVariants}
-                                    className="text-[18vw] md:text-9xl font-heading font-bold tracking-tighter text-white inline-block lowercase"
-                                >
-                                    {letter}
-                                </motion.span>
-                            ))}
+                    <div className="relative z-10 flex flex-col items-center justify-center">
+                        <div className="overflow-hidden flex items-baseline">
                             <motion.span
-                                variants={letterVariants}
-                                className="text-[18vw] md:text-9xl font-heading font-bold tracking-tighter text-[#4A90E2] inline-block"
+                                initial={{ y: 100 }}
+                                animate={{ y: 0 }}
+                                transition={{ duration: 1, ease: EASE, delay: 0.2 }}
+                                className="text-5xl md:text-8xl font-heading font-extrabold tracking-tighter text-white"
+                            >
+                                Muncheez
+                            </motion.span>
+                            <motion.span
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1], delay: 0.8 }}
+                                className="text-5xl md:text-8xl font-heading font-extrabold tracking-tighter text-[#4A90E2]"
                             >
                                 .
                             </motion.span>
-                        </motion.div>
+                        </div>
 
-                        <div className="overflow-hidden h-16 md:h-16 flex items-center justify-center">
+                        <div className="overflow-hidden mt-2">
                             <motion.p
-                                initial={{ y: "150%" }}
-                                animate={{ y: 0 }}
-                                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 1.2 }}
-                                className="text-[10px] md:text-sm font-medium text-white/50 uppercase tracking-[0.5em] md:tracking-[0.8em]"
+                                initial={{ y: "100%", opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1, ease: EASE, delay: 1 }}
+                                className="text-xs md:text-sm font-bold uppercase tracking-[0.5em] text-white/50"
                             >
                                 The 254 Selection
                             </motion.p>
                         </div>
                     </div>
 
-                    {/* Minimalist Loading Bar */}
+                    {/* Progress Bar */}
                     <motion.div
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ duration: 3.5, ease: "easeInOut" }}
-                        className="absolute bottom-0 left-0 h-1.5 md:h-1 bg-[#4A90E2] w-full origin-left"
+                        className="absolute bottom-0 left-0 w-full h-[2px] bg-[#4A90E2] origin-left"
                     />
 
-                    {/* Cinematic Grain/Texture Overlay - Reduced for iOS */}
-                    <div className="absolute inset-0 z-[1] opacity-[0.015] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
-
-                    {/* Ambient Glow - Reduced for iOS */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#4A90E2] rounded-full blur-[50px] md:blur-[120px] opacity-10 pointer-events-none" />
+                    {/* Texture */}
+                    <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat" />
                 </motion.div>
             )}
         </AnimatePresence>

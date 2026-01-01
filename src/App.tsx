@@ -26,6 +26,7 @@ function AppContent() {
         <Route path="/" element={<Home />} />
         <Route path="/social" element={<ComingSoon />} />
         <Route path="/our-story" element={<OurStory />} />
+        <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         {/* Client Auth */}
         <Route path="/login" element={<Login />} />

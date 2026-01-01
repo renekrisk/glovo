@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Heart, Flame, Utensils, Globe, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const collections = [
     {
@@ -107,46 +108,52 @@ export default function Collections() {
                                 viewport={{ once: true, amount: 0.2 }}
                                 className={`relative group shrink-0 w-[85vw] sm:w-[350px] lg:w-auto snap-center ${item.span}`}
                             >
-                                <div className="relative h-full overflow-hidden rounded-[2rem] bg-gray-900 shadow-xl isolate">
-                                    {/* Image Layer */}
-                                    <div className={`w-full ${item.aspect} overflow-hidden`}>
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-[1200ms] ease-out will-change-transform opacity-80 group-hover:opacity-60"
-                                        />
-                                    </div>
-
-                                    {/* Overlay Gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
-
-                                    {/* Content Layer - Bottom Aligned */}
-                                    <div className="absolute bottom-0 left-0 w-full p-8 lg:p-12 z-20 translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                                        <div className="flex items-end justify-between mb-4">
-                                            <div>
-                                                <span className="block text-[10px] font-bold uppercase tracking-[0.3em] text-[#D4AF37] mb-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                                    {item.tagline}
-                                                </span>
-                                                <h3 className="text-3xl lg:text-5xl font-heading font-bold text-white mb-2 leading-none tracking-tight">
-                                                    {item.name}
-                                                </h3>
-                                            </div>
-                                            <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white lg:group-hover:bg-[#D4AF37] lg:group-hover:border-[#D4AF37] lg:group-hover:text-black transition-all duration-300 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 scale-100 lg:scale-75 lg:group-hover:scale-100 origin-right">
-                                                <ArrowRight size={20} className="-rotate-45" />
-                                            </div>
+                                <Link
+                                    to="/coming-soon"
+                                    state={{ name: item.name, status: 'coming soon' }}
+                                    className="block h-full w-full"
+                                >
+                                    <div className="relative h-full overflow-hidden rounded-[2rem] bg-gray-900 shadow-xl isolate">
+                                        {/* Image Layer */}
+                                        <div className={`w-full ${item.aspect} overflow-hidden`}>
+                                            <img
+                                                src={item.image}
+                                                alt={item.name}
+                                                className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-[1200ms] ease-out will-change-transform opacity-80 group-hover:opacity-60"
+                                            />
                                         </div>
-                                        <p className="text-sm lg:text-base text-white/70 font-light max-w-sm line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500">
-                                            {item.description}
-                                        </p>
-                                    </div>
 
-                                    {/* Floating ID Number */}
-                                    <div className="absolute top-6 left-6 z-20">
-                                        <span className="text-xs font-bold text-white/30 border border-white/20 px-3 py-1 rounded-full backdrop-blur-md">
-                                            {item.id}
-                                        </span>
+                                        {/* Overlay Gradient */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+
+                                        {/* Content Layer - Bottom Aligned */}
+                                        <div className="absolute bottom-0 left-0 w-full p-8 lg:p-12 z-20 translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                                            <div className="flex items-end justify-between mb-4">
+                                                <div>
+                                                    <span className="block text-[10px] font-bold uppercase tracking-[0.3em] text-[#D4AF37] mb-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                                        {item.tagline}
+                                                    </span>
+                                                    <h3 className="text-3xl lg:text-5xl font-heading font-bold text-white mb-2 leading-none tracking-tight">
+                                                        {item.name}
+                                                    </h3>
+                                                </div>
+                                                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white lg:group-hover:bg-[#D4AF37] lg:group-hover:border-[#D4AF37] lg:group-hover:text-black transition-all duration-300 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 scale-100 lg:scale-75 lg:group-hover:scale-100 origin-right">
+                                                    <ArrowRight size={20} className="-rotate-45" />
+                                                </div>
+                                            </div>
+                                            <p className="text-sm lg:text-base text-white/70 font-light max-w-sm line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500">
+                                                {item.description}
+                                            </p>
+                                        </div>
+
+                                        {/* Floating ID Number */}
+                                        <div className="absolute top-6 left-6 z-20">
+                                            <span className="text-xs font-bold text-white/30 border border-white/20 px-3 py-1 rounded-full backdrop-blur-md">
+                                                {item.id}
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             </motion.div>
                         ))}
                     </div>
@@ -154,10 +161,14 @@ export default function Collections() {
 
                 {/* Footer Stat/Action */}
                 <div className="hidden lg:block mt-32 text-center">
-                    <button className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-gray-900 transition-all duration-300 group">
+                    <Link
+                        to="/coming-soon"
+                        state={{ name: "Full Selection", status: 'coming soon' }}
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-gray-900 transition-all duration-300 group"
+                    >
                         Explore Full Selection
                         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

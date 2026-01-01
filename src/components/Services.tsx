@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const offerings = [
     {
@@ -128,10 +129,14 @@ export default function Services() {
                                                 <p className="text-lg text-white/80 font-light leading-relaxed max-w-md mb-8">
                                                     {item.description}
                                                 </p>
-                                                <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-white/80 transition-colors group/btn">
+                                                <Link
+                                                    to="/coming-soon"
+                                                    state={{ name: item.category, status: 'coming soon' }}
+                                                    className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-white/80 transition-colors group/btn"
+                                                >
                                                     Explore
                                                     <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                                                </button>
+                                                </Link>
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
@@ -151,9 +156,11 @@ export default function Services() {
                 <div className="lg:hidden -mx-6">
                     <div className="flex overflow-x-auto gap-6 snap-x snap-mandatory px-6 pb-12 scrollbar-hide">
                         {offerings.map((item) => (
-                            <div
+                            <Link
                                 key={item.id}
-                                className="relative shrink-0 w-[85vw] aspect-[4/5] rounded-[2rem] overflow-hidden snap-center group"
+                                to="/coming-soon"
+                                state={{ name: item.category, status: 'coming soon' }}
+                                className="relative shrink-0 w-[85vw] aspect-[4/5] rounded-[2rem] overflow-hidden snap-center group block"
                             >
                                 <img
                                     src={item.image}
@@ -173,7 +180,7 @@ export default function Services() {
                                         {item.description}
                                     </p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
