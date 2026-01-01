@@ -61,17 +61,7 @@ const pages: Record<string, PageData> = {
     },
 
     // 2. THE NARRATIVE (Magazine Style)
-    'about-us': {
-        type: 'narrative',
-        title: 'Our Identity',
-        subtitle: 'The 254 Delivery Soul',
-        content: "Muncheez isn't just an app. It's a bridge. We connect Nairobi's legendary kitchens and hidden gems to your table. Built for the city, by the city.",
-        sections: [
-            { title: "The Mission", body: "Our goal is simple: to honor the hustle of Nairobi's local food scene while providing a premium, seamless experience for our customers. We believe that good food shouldn't just be accessible—it should be celebrated. We represent the bold, the flavorful, and the relentless spirit of the 254." },
-            { title: "The Vision", body: "We're building more than a delivery app; we're building a community that values authenticity, speed, and the unique flavors that make Nairobi the heartbeat of East Africa. Our vision is to be the pulse of the city's culinary world, connecting every kitchen to every heart." },
-            { title: "Our Values", body: "Respect the Craft. Hustle & Flow. Community First. Transparency. These aren't just buzzwords; they are the code we live by." }
-        ]
-    },
+
     'our-team': {
         type: 'narrative',
         title: 'The Collective',

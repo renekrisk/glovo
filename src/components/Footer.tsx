@@ -69,7 +69,7 @@ export default function Footer() {
                         <h4 className="text-[9px] font-bold text-white/20 uppercase tracking-[0.3em] mb-6">Company</h4>
                         <ul className="space-y-3">
                             {[
-                                { name: 'About Us', slug: 'about-us' },
+                                { name: 'About Us', href: '/our-story' },
                                 { name: 'Our Team', slug: 'our-team' },
                                 { name: 'Join Rider', href: '/courier/login' }
                             ].map((item) => (

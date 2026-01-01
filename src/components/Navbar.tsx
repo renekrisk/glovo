@@ -48,10 +48,9 @@ export default function Navbar() {
                     {/* Center: Editorial Navigation (Desktop Only) */}
                     <div className="hidden md:flex items-center gap-12">
                         {[
-                            { name: 'COLLECTIONS', href: '/#categories' },
+                            { name: 'SELECTION', href: '/#categories' },
                             { name: 'FEED', href: '/social' },
-                            { name: 'OUR STORY', href: '/legal/about-us' },
-                            { name: 'KULA FITI', href: '/#app-download' },
+                            { name: 'OUR STORY', href: '/our-story' },
                         ].map((item) => (
                             <a
                                 key={item.name}
@@ -118,24 +117,30 @@ export default function Navbar() {
                         >
                             <X size={32} strokeWidth={1} />
                         </button>
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-8">
                             {[
-                                { name: 'COLLECTIONS', href: '/#categories' },
-                                { name: 'FEED', href: '/social' },
-                                { name: 'OUR STORY', href: '/legal/about-us' },
-                                { name: 'OUR TEAM', href: '/legal/our-team' },
-                                { name: 'KULA FITI', href: '/#app-download' },
+                                { name: 'Our Offering', href: '/#about' },
+                                { name: 'Selection', href: '/#categories' },
+                                { name: 'Our Story', href: '/our-story' },
+                                { name: 'Feed', href: '/social' },
+                                { name: 'Contact', href: '/legal/contact-us' },
+                                { name: 'The Team', href: '/legal/our-team' },
                             ].map((item, i) => (
                                 <motion.a
                                     key={item.name}
                                     initial={{ x: -20, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
-                                    transition={{ delay: 0.1 + (i * 0.08) }}
+                                    transition={{ delay: 0.1 + (i * 0.05) }}
                                     href={item.href}
-                                    className="text-3xl font-heading font-extralight tracking-tight text-white hover:text-[#4A90E2] transition-colors"
+                                    className="flex items-center gap-4 group"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    {item.name}
+                                    <span className="text-[#4A90E2]/50 font-mono text-[10px] group-hover:text-[#4A90E2] transition-colors pt-1">
+                                        0{i + 1}
+                                    </span>
+                                    <span className="text-xl font-heading font-light tracking-wide text-white group-hover:text-[#4A90E2] transition-colors">
+                                        {item.name}
+                                    </span>
                                 </motion.a>
                             ))}
                         </div>

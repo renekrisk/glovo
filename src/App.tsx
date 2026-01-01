@@ -12,11 +12,12 @@ import LegalPage from "./pages/LegalPage";
 import AdminLogin from "./pages/AdminLogin";
 import WelcomeScreen from "./components/WelcomeScreen";
 import ComingSoon from "./pages/ComingSoon";
+import OurStory from "./pages/OurStory";
 
 function AppContent() {
   const location = useLocation();
-  // Navbar ONLY shows on homepage
-  const showNavbar = location.pathname === '/';
+  // Navbar shows on homepage and Our Story
+  const showNavbar = location.pathname === '/' || location.pathname === '/our-story';
 
   return (
     <>
@@ -24,6 +25,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/social" element={<ComingSoon />} />
+        <Route path="/our-story" element={<OurStory />} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         {/* Client Auth */}
         <Route path="/login" element={<Login />} />
